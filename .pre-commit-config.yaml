@@ -15,6 +15,12 @@ repos:
       - id: typos
         args: []
 
+  # initialization with: pre-commit install
+  - repo: https://github.com/yoheimuta/protolint
+    rev: v0.43.1
+    hooks:
+      - id: protolint
+
   # initialization with: pre-commit install --hook-type commit-msg
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v2.1.1
