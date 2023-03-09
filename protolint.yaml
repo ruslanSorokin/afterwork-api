@@ -3,27 +3,19 @@
 lint:
   # Linter files to ignore.
   ignores:
-    - id: MESSAGE_NAMES_UPPER_CAMEL_CASE
-      files:
-        # NOTE: UNIX paths will be properly accepted by both UNIX and Windows.
-        - _example/proto/simple.proto
-    - id: ENUM_NAMES_UPPER_CAMEL_CASE
-      files:
-        - path/to/foo.proto
 
   # Linter files to walk.
   files:
     # The specific files to exclude.
     exclude:
       # NOTE: UNIX paths will be properly accepted by both UNIX and Windows.
-      - path/to/file
 
   # Linter directories to walk.
   directories:
     # The specific directories to exclude.
     exclude:
       # NOTE: UNIX paths will be properly accepted by both UNIX and Windows.
-      - path/to/dir
+      - deps/
 
   # Linter rules.
   # Run `protolint list` to see all available rules.
