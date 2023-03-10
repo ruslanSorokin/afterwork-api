@@ -29,6 +29,10 @@ lint:
 
     # The specific linters to add.
     add:
+      - ENUM_FIELD_NAMES_PREFIX
+      - ENUM_FIELD_NAMES_UPPER_SNAKE_CASE
+      - ENUM_FIELD_NAMES_ZERO_VALUE_END_WITH
+      - ENUM_NAMES_UPPER_CAMEL_CASE
       - ENUMS_HAVE_COMMENT
       - FIELD_NAMES_EXCLUDE_PREPOSITIONS
       - FIELD_NAMES_LOWER_SNAKE_CASE
@@ -50,7 +54,6 @@ lint:
       - SERVICE_NAMES_END_WITH
       - SERVICES_HAVE_COMMENT
       - SYNTAX_CONSISTENT
-
     # The specific linters to remove.
     remove:
       - ENUM_FIELDS_HAVE_COMMENT
