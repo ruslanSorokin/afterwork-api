@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+// Rating.
+message Rating{
+  // Required.
+  optional uint32 visit = 1;
+  // Required.
+  optional uint32 like = 2;
+  // Required.
+  optional uint32 dislike = 3;
+}

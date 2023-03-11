@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+
+import "google/type/latlng.proto";
+import "google/type/money.proto";
+import "google/type/postal_address.proto";
+
+import "bill.proto";
+import "opening_hours.proto";
+
+// Place aka Point of interest
+message Place{
+
+  // Required.
+  optional string uuid = 1;
+
+  // TODO: use google.type.postal_address?
+  //
+  // Maybe we should use google.type.postal_address, but for now it seems
+  // that it brings too much complexity.
+  // see: github.com/googleapis/googleapis/google/type/postal_address.proto
+  //
+  // Required. String-format address like: "Maxim Gorky St, 2".
+  // Not used for geo-coding.
+  optional string address = 2;
+
+  // Required.
+  optional string name = 3;
+
+
+  // Required. Used for geo-coding.
+  optional google.type.Latlng lat_lng = 4;
+
+  // Required.
+  optional Category category = 5;
+
+  optional Bill bill = 6;
+
+  optional OpeningHours opening_hours = 7;
+
+  optional Rating rating = 8;
+}

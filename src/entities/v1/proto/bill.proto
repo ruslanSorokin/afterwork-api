@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/type/money.proto";
+
+// Bill.
+message Bill{
+  oneof bill {
+    google.type.Money average = 1;
+
+    BillInterval interval = 2;
+  }
+}
+
+// BillInterval used to describe interval between min & max average values.
+// One of the field may be empty, in such case it must be treaten as relevant
+// bound: 0 for lower & some max value for upper.
+message BillInterval{
+
+  // Required.
+  google.type.Money lower = 1;
+
+  // Required.
+  google.type.Money upper = 2;
+}

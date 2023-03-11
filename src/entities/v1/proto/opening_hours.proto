@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+import "google/type/day_of_week.proto";
+import "google/type/interval.proto";
+
+// OpeningHours.
+message OpeningHours{
+  // Required.
+  oneof opening_hours{
+    SpecialState special_state = 1;
+    OpeningHoursWeek opening_hours_week = 2;
+  }
+
+}
+
+// SpecialState used to describe special open/closed state of something.
+enum SpecialState{
+  // SPECIAL_STATE_UNSPECIFIED is a default NULL value for the enum.
+  SPECIAL_STATE_UNSPECIFIED = 0;
+  // SPECIAL_STATE_TWENTY_FOUR_HOURS used when something provides 24/7 service.
+  SPECIAL_STATE_TWENTY_FOUR_HOURS = 1;
+  // SPECIAL_STATE_TEMPORARY_CLOSED used when something is closed for the
+  // whole week.
+  SPECIAL_STATE_TEMPORARY_CLOSED = 2;
+}
+
+// OpeningHoursWeek.
+message OpeningHoursWeek{
+  // TODO: create explicit fields?
+  //
+  // Maybe we should explicitly set a field per day like this:
+  //
+  // ```proto3
+  //
+  // optional OpeningHoursDay monday = 1;
+  // optional OpeningHoursDay tuesday = 2;
+  // optional OpeningHoursDay wednesday = 3;
+  // optional OpeningHoursDay thursday = 4;
+  // optional OpeningHoursDay friday = 5;
+  // optional OpeningHoursDay saturday = 6;
+  //
+  // ```
+  //
+  // But IDK what it will be when it comes to pattern matching
+  // maybe it will be worse than process an array.
+  // Required.
+  repeated OpeningHoursDay opening_hours_days = 1;
+}
+
+// OpeningHoursDay.
+message OpeningHoursDay{
+  // Required.
+  optional google.type.DayOfWeek day = 1;
+
+  // Required.
+  optional google.type.Interval interval = 2;
+}
