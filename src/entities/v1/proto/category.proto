@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-// PlaceCategory.
+// PlaceCategory is an aggregation key.
 enum PlaceCategory{
   //TODO: should we use hierarchy & sub categories?
   PLACE_CATEGORY_UNSPECIFIED = 0;

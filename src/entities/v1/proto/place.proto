@@ -8,7 +8,7 @@ import "google/type/postal_address.proto";
 import "bill.proto";
 import "opening_hours.proto";
 
-// Place aka Point of interest
+// Place aka Point of Interest.
 message Place{
 
   // Required.

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/type/money.proto";
 
-// Bill.
+// Bill is an aggregation key.
 message Bill{
   oneof bill {
     google.type.Money average = 1;
@@ -11,9 +11,10 @@ message Bill{
   }
 }
 
-// BillInterval used to describe interval between min & max average values.
-// One of the field may be empty, in such case it must be treaten as relevant
-// bound: 0 for lower & some max value for upper.
+// BillInterval is an interval between 2 money value.
+// One of the field may be empty, in such case it must be treaten
+// as the relevant bound: 0 for the lower one and some max value
+// for the upper one.
 message BillInterval{
 
   // Required.

@@ -3,7 +3,7 @@ syntax = "proto3";
 import "google/type/day_of_week.proto";
 import "google/type/interval.proto";
 
-// OpeningHours.
+// OpeningHours is an aggregetion key.
 message OpeningHours{
   // Required.
   oneof opening_hours{
@@ -13,7 +13,7 @@ message OpeningHours{
 
 }
 
-// SpecialState used to describe special open/closed state of something.
+// Used to specify special open/closed state of something.
 enum SpecialState{
   // SPECIAL_STATE_UNSPECIFIED is a default NULL value for the enum.
   SPECIAL_STATE_UNSPECIFIED = 0;
@@ -24,7 +24,7 @@ enum SpecialState{
   SPECIAL_STATE_TEMPORARY_CLOSED = 2;
 }
 
-// OpeningHoursWeek.
+// Used to specify open/closed hours for a week.
 message OpeningHoursWeek{
   // TODO: create explicit fields?
   //
@@ -43,11 +43,12 @@ message OpeningHoursWeek{
   //
   // But IDK what it will be when it comes to pattern matching
   // maybe it will be worse than process an array.
+
   // Required.
   repeated OpeningHoursDay opening_hours_days = 1;
 }
 
-// OpeningHoursDay.
+// Used to specify open/closed hours for a day.
 message OpeningHoursDay{
   // Required.
   optional google.type.DayOfWeek day = 1;
