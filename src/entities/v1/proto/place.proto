@@ -42,4 +42,15 @@ message Place{
 
   // Optional. Used as aggregation key
   optional Rating rating = 8;
+
+  // Optional. Lifetime of the object. If empty will be set to default value.
+  optional google.protobuf.Duration lifetime = 9;
+
+  // Output only. Timestamp when the place was created.
+  // Assigned by the server.
+  optional google.protobuf.Timestamp created_at = 10;
+
+  // Output only. Timestamp when the place was last modified.
+  // Assigned by the server.
+  optional google.protobuf.Timestamp updated_at = 11;
 }
