@@ -38,7 +38,6 @@ lint:
       - FILE_NAMES_LOWER_SNAKE_CASE
       - IMPORTS_SORTED
       - INDENT
-      - MAX_LINE_LENGTH
       - MESSAGE_NAMES_UPPER_CAMEL_CASE
       - MESSAGES_HAVE_COMMENT
       - ORDER
@@ -54,6 +53,7 @@ lint:
       - SYNTAX_CONSISTENT
     # The specific linters to remove.
     remove:
+      - MAX_LINE_LENGTH
       - MESSAGE_NAMES_EXCLUDE_PREPOSITIONS
       - FIELD_NAMES_EXCLUDE_PREPOSITIONS
       - ENUM_FIELDS_HAVE_COMMENT
