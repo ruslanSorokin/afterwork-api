@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+import "place_transport.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/service/proto;proto";
+
+// PlaceService provides basic CRUD+Search operations for Place object.
+service PlaceService{
+  // Creates Place with given data object.
+  // Returns nothing.
+  rpc CreatePlace(CreatePlaceReq)
+    returns (CreatePlaceRes);
+
+  // Create Places with given data objects.
+  // Returns nothing.
+  rpc CreatePlacesStrm(stream CreatePlaceReq)
+    returns (stream CreatePlacesStrmRes);
+
+  // Read Place with given ID applying given read mask.
+  // Returns Place object.
+  rpc ReadPlace(ReadPlaceReq)
+    returns (ReadPlaceRes);
+
+  // Read series of Places with given series of ID's applying the same read
+  // mask for each one.
+  // Returns series of Place objects.
+  rpc ReadPlacesStrm(stream ReadPlaceReq)
+    returns (stream ReadPlacesStrmRes);
+
+  // Update Place with given ID applying given update mask.
+  // Returns nothing.
+  rpc UpdatePlace(UpdatePlaceReq)
+    returns (UpdatePlaceRes);
+
+  // Update series of Places with given ID's applying the same update
+  // mask for each one.
+  // Returns nothing.
+  rpc UpdatePlacesStrm(stream UpdatePlaceReq)
+    returns (stream UpdatePlacesStrmRes);
+
+  // Delete Place with given ID.
+  // Returns nothing.
+  rpc DeletePlace(DeletePlaceReq)
+    returns (DeletePlaceRes);
+
+  // Delete series of Places with given ID's.
+  // Returns nothing.
+  rpc DeletePlacesStrm(stream DeletePlaceReq)
+    returns (stream DeletePlacesStrmRes);
+
+  // Read series of Places filtered by given Search options.
+  // Returns series of Place objects.
+  rpc SearchPlaceStrm(stream SearchPlaceReq)
+    returns(stream SearchPlaceRes);
+}

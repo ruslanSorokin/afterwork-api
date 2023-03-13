@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+import "google/protobuf/field_mask.proto";
+import "google/rpc/status.proto";
+
+import "place.proto";
+import "search_options.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/service/proto;proto";
+
+// CreatePlaceReq.
+message CreatePlaceReq{
+  // Required.
+  optional Place place = 1;
+}
+
+// CreatePlaceRes.
+message CreatePlaceRes{}
+
+// CreatePlacesStrmRes.
+message CreatePlacesStrmRes{
+  // Required.
+  oneof response{
+    CreatePlaceRes create_place = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// ReadPlaceReq.
+message ReadPlaceReq{
+  // Required.
+  optional string place_uuid = 1;
+  // Optional.
+  optional google.protobuf.FieldMask read_mask = 2;
+}
+
+// ReadPlaceRes.
+message ReadPlaceRes{
+  optional Place place = 1;
+}
+
+// ReadPlacesStrmRes.
+message ReadPlacesStrmRes{
+  // Required.
+  oneof response{
+    CreatePlaceRes read_place = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// UpdatePlaceReq.
+message UpdatePlaceReq{
+  // Required.
+  optional string place_uuid = 1;
+  // Optional.
+  optional google.protobuf.FieldMask update_mask = 2;
+}
+
+// UpdatePlaceRes.
+message UpdatePlaceRes{}
+
+// UpdatePlacesStrmRes.
+message UpdatePlacesStrmRes{
+  // Required.
+  oneof response{
+    CreatePlaceRes update_place = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// DeletePlaceReq.
+message DeletePlaceReq{
+  // Required.
+  optional string place_uuid = 1;
+}
+
+// DeletePlaceRes.
+message DeletePlaceRes{}
+
+// DeletePlacesStrmRes.
+message DeletePlacesStrmRes{
+  // Required.
+  oneof response{
+    CreatePlaceRes delete_place = 1;
+    google.rpc.Status error = 2;
+  }
+}
+
+// SearchPlaceReq.
+message SearchPlaceReq{
+  // Required on the first call.
+  optional SearchOptions search_options = 1;
+
+  // Optional.
+  optional google.protobuf.FieldMask read_mask = 2;
+
+  // Required until the last call.
+  optional string continuation_token = 3;
+}
+
+// SearchPlaceRes.
+message SearchPlaceRes{
+  oneof response{
+    Place place = 1;
+    google.rpc.Status error = 2;
+  }
+}
