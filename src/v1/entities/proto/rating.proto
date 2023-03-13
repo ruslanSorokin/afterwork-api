@@ -1,5 +1,9 @@
 syntax = "proto3";
 
+package ruslansorokin.afterwork.v1;
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
+
 // Rating.
 message Rating{
   // Required.
@@ -10,4 +14,14 @@ message Rating{
 
   // Required.
   optional uint32 dislike = 3;
+}
+
+// RatingInterval.
+message RatingInterval{
+  // TODO: add max value for these fields
+  // Required.
+  optional uint32 min = 1;
+
+  // Required.
+  optional uint32 max = 2;
 }

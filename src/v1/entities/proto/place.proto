@@ -1,14 +1,17 @@
 syntax = "proto3";
 
+package ruslansorokin.afterwork.v1;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 import "google/type/latlng.proto";
 
 import "bill.proto";
-import "category.proto";
 import "opening_hours.proto";
+import "place_category.proto";
 import "rating.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
 
 // Place aka Point of Interest.
 message Place{

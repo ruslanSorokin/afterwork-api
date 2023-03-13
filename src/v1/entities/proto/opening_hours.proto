@@ -1,7 +1,11 @@
 syntax = "proto3";
 
+package ruslansorokin.afterwork.v1;
+
 import "google/type/dayofweek.proto";
 import "google/type/interval.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
 
 // OpeningHours is an aggregetion key.
 message OpeningHours{
@@ -10,7 +14,6 @@ message OpeningHours{
     SpecialState special_state = 1;
     OpeningHoursWeek opening_hours_week = 2;
   }
-
 }
 
 // Used to specify special open/closed state of something.
