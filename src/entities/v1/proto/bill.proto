@@ -6,17 +6,15 @@ import "google/type/money.proto";
 message Bill{
   oneof bill {
     google.type.Money average = 1;
-
     BillInterval interval = 2;
   }
 }
 
-// BillInterval is an interval between 2 money value.
+// BillInterval is an interval between 2 money values.
 // One of the field may be empty, in such case it must be treaten
 // as the relevant bound: 0 for the lower one and some max value
 // for the upper one.
 message BillInterval{
-
   // Required.
   google.type.Money lower = 1;
 
