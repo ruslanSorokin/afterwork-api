@@ -4,7 +4,7 @@ package ruslansorokin.afterwork.v1;
 
 import "google/type/money.proto";
 
-option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entity/proto;proto";
 
 // Bill is an aggregation key.
 message Bill{
