@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+import "google/type/money.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
+
+// Bill is an aggregation key.
+message Bill{
+  oneof bill {
+    google.type.Money average = 1;
+    BillInterval interval = 2;
+  }
+}
+
+// BillInterval is an interval between 2 money values.
+// One of the field may be empty, in such case it must be treaten
+// as the relevant bound: 0 for the lower one and some max value
+// for the upper one.
+message BillInterval{
+  // Required.
+  google.type.Money lower = 1;
+
+  // Required.
+  google.type.Money upper = 2;
+}

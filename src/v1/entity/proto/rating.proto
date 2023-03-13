@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
+
+// Rating.
+message Rating{
+  // Required.
+  optional uint32 visit = 1;
+
+  // Required.
+  optional uint32 like = 2;
+
+  // Required.
+  optional uint32 dislike = 3;
+}
+
+// RatingInterval.
+message RatingInterval{
+  // TODO: add max value for these fields
+  // Required.
+  optional uint32 min = 1;
+
+  // Required.
+  optional uint32 max = 2;
+}

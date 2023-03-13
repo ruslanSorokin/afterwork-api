@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/service/proto;proto";
+
+// Used to exclude already seen objects.
+message ContinuationToken{
+  // Optional.
+  // If this field is populated seen_uuids & bloom_filter will be skipped.
+  repeated int64 seen_ids = 1;
+
+  // Optional.
+  // If this field is populated bloom_filter will be skipped.
+  // Will be skipped, if seen_ids field is populated.
+  repeated string seen_uuids = 2;
+
+  // Optional.
+  // Will be skipped, if either of seen_ids or seen_uuids is populated.
+  optional bytes bloom_filter = 3;
+
+  // TODO: do we need it?
+  // Required.
+  optional google.protobuf.Timestamp operation_start = 4;
+
+  // Optional.
+  optional int64 page_size = 5;
+}

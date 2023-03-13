@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
+
+// PlaceCategory is an aggregation key.
+enum PlaceCategory{
+  //TODO: should we use hierarchy & sub categories?
+  PLACE_CATEGORY_UNSPECIFIED = 0;
+  PLACE_CATEGORY_AMERICAN_CUISINE = 1;
+  PLACE_CATEGORY_GEORGIAN_CUISINE = 2;
+  PLACE_CATEGORY_ITALIAN_CUISINE = 3;
+  PLACE_CATEGORY_JAPANESE_CUISINE = 4;
+  PLACE_CATEGORY_RUSSIAN_CUISINE = 5;
+  PLACE_CATEGORY_VEGAN_MENU = 6;
+  PLACE_CATEGORY_KAFE = 7;
+  PLACE_CATEGORY_STEAK = 8;
+  PLACE_CATEGORY_CONFECTIONERY = 9;
+  PLACE_CATEGORY_BAR = 10;
+  PLACE_CATEGORY_PAB = 11;
+  PLACE_CATEGORY_BEER_HOUSE = 12;
+  PLACE_CATEGORY_COFFEE_HOUSE = 13;
+  PLACE_CATEGORY_MUSEUM = 14;
+  PLACE_CATEGORY_GALLERY = 15;
+  PLACE_CATEGORY_NIGHTCLUB = 16;
+  PLACE_CATEGORY_PHARMACY = 17;
+}
