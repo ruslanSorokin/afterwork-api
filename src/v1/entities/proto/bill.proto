@@ -6,7 +6,6 @@ import "google/type/money.proto";
 message Bill{
   oneof bill {
     google.type.Money average = 1;
-
     BillInterval interval = 2;
   }
 }

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "google/type/day_of_week.proto";
+import "google/type/dayofweek.proto";
 import "google/type/interval.proto";
 
 // OpeningHours is an aggregetion key.
