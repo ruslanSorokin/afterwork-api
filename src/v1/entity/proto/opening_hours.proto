@@ -5,7 +5,7 @@ package ruslansorokin.afterwork.v1;
 import "google/type/dayofweek.proto";
 import "google/type/interval.proto";
 
-option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entity/proto;proto";
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
 
 // OpeningHours is an aggregetion key.
 message OpeningHours{

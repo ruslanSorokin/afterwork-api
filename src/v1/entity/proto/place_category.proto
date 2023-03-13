@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ruslansorokin.afterwork.v1;
 
-option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entity/proto;proto";
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
 
 // PlaceCategory is an aggregation key.
 enum PlaceCategory{

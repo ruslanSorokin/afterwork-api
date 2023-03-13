@@ -11,7 +11,7 @@ import "opening_hours.proto";
 import "place_category.proto";
 import "rating.proto";
 
-option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entity/proto;proto";
+option go_package = "github.com/ruslanSorokin/afterwork-api/gen/go/v1/entity/proto;proto";
 
 // Place aka Point of Interest.
 message Place{
