@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
+
+// DistanceInterval
+message DistanceInterval{
+  // Required. Distance in meters.
+  optional uint32 start = 1;
+
+  // Required. Distance in meters.
+  optional uint32 stop = 2;
+}

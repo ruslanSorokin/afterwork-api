@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package ruslansorokin.afterwork.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/type/latlng.proto";
+
+import "bill.proto";
+import "distance_interval.proto";
+import "place_category.proto";
+import "rating.proto";
+
+option go_package = "github.com/ruslanSorokin/afterwork-api/v1/entities/proto;proto";
+
+// SearchOptions.
+message SearchOptions{
+  optional PlaceOptions place_options = 1;
+
+  optional DistanceOptions distance_options = 2;
+
+  optional RatingInterval rating_interval = 3;
+
+  optional BillInterval bill_interval = 4;
+
+  optional OpeningHoursOptions opening_hours_options = 5;
+}
+
+// PlaceOptions.
+message PlaceOptions{
+  repeated PlaceCategory categories = 1;
+}
+
+// DistanceOptions.
+message DistanceOptions{
+  // Required.
+  optional google.type.LatLng search_area_center = 1;
+
+  // Required.
+  optional DistanceInterval distance_interval = 2;
+}
+
+// OpeningHoursOptions.
+message OpeningHoursOptions{
+  //FIXME: do we need aggregation by current week or only by days of week?
+  // Required.
+  optional google.protobuf.Timestamp local_time = 1;
+
+  // Required.
+  // optional OpeningHoursInterval opening_hours_interval = 2;
+}
